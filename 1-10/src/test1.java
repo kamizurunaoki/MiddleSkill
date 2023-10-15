@@ -16,14 +16,8 @@ public class test1 {
 		
 		//問題2:配列"numb"の要素を逆順に出力してください。
 		int[] numb = {1, 2, 3, 4, 5};
-		Integer[] reversedArray = new Integer[numb.length];
-        // 配列 numb を逆順にソート
-        for (int i = 0; i < numb.length; i++) {
-            reversedArray[i] = numb[numb.length - 1 - i];
-        }
-        // ソートした配列を出力
-        for (int data : reversedArray) {
-            System.out.println(data);
+		for(int i=numb.length-1; i>=0; i--) {
+            System.out.println(numb[i]);
         }
 
 		//改行
@@ -45,17 +39,9 @@ public class test1 {
 		
 		//問題4:この配列"numd"をコピーした配列名"new_numd"を作り"new_numd"の中身を出力してください。
 		int[] numd = {1, 3, 5, 7, 9};
-		 // 配列 numd をコピーして新しい配列 new_numd を作成
-        int[] new_numd = new int[numd.length];
-        System.arraycopy(numd, 0, new_numd, 0, numd.length);
-
-        for (int i = 0; i < new_numd.length; i++) {
-            System.out.print(new_numd[i]); 
-            if (i < new_numd.length - 1) {
-                System.out.print(", "); 
-            }
-        }
-        System.out.println(); // 改行
+		int[] new_numd = numd.clone();
+		System.out.println(Arrays.toString(new_numd));
+     
 		//改行
 		System.out.println("問５");
 		
@@ -64,33 +50,18 @@ public class test1 {
 		 // 配列 nume を昇順にソート
         Arrays.sort(nume);
 
-        for (int i = 0; i < nume.length; i++) {
-            System.out.print(nume[i]); // 要素を出力
-            if (i < nume.length - 1) {
-                System.out.print(", "); // 最後の要素以外にカンマとスペースを追加
-            }
-        }
-        System.out.println(); 
+        System.out.println(Arrays.toString(nume));
 		//改行
 		System.out.println("問６");
 		
 		//問題6:配列"numf"に要素を1つ(10)追加した配列"new_numf"を作成し出力しなさい。
 		int[] numf = {1, 3, 5, 7, 9};
-		// 新しい配列 new_numf を作成
-        int[] new_numf = new int[6];
-        // 元の配列 numf の要素を新しい配列 new_numf にコピー
-        for (int i = 0; i < numf.length; i++) {
-            new_numf[i] = numf[i];
+		int[] new_numf = new int[6];
+		System.arraycopy(numf,0,new_numf,0,5);
+		new_numf[5]=10;
+		for (int new_numfdata: new_numf){
+            System.out.println(new_numfdata);
         }
-        // 新しい要素 (10) を追加
-        new_numf[5] = 10;
-        for (int i = 0; i < new_numf.length; i++) {
-            System.out.print(new_numf[i]); // 要素を出力
-            if (i < new_numf.length - 1) {
-                System.out.print(", "); // 最後の要素以外にカンマとスペースを追加
-            }
-        }
-        System.out.println();
         
 		//改行
 		System.out.println("問７");
